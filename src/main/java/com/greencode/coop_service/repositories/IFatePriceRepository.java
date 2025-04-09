@@ -16,6 +16,6 @@ public interface IFatePriceRepository extends IGenericRepository<FatePrice, Fate
     @Transactional
     @Modifying
     @Query(value ="INSERT INTO fate_price (id_price, id_fate, status) VALUES(:idPrice, :idFate, 1)", nativeQuery = true)
-    Integer saveTransactional(@Param("idPrice")UUID idPrice, @Param("idFate")UUID idFate);
+    Integer saveTransactional(@Param("idFate")UUID idFate, @Param("idPrice")UUID idPrice);
 
 }

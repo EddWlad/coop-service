@@ -26,7 +26,7 @@ public class Staff {
     private String name;
 
     @Column(name = "idRol", nullable = false)
-    private String idRol;
+    private UUID idRol;
 
     @Column(name = "phone", nullable = false)
     private String phone;

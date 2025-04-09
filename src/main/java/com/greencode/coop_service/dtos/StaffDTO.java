@@ -14,7 +14,7 @@ public class StaffDTO {
     private UUID idStaff;
 
     private String name;
-    private String idRol;
+    private UUID idRol;
     private String phone;
     private String email;
     private Integer status = 1;
