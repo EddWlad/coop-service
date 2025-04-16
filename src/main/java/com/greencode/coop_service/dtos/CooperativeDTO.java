@@ -1,6 +1,8 @@
 package com.greencode.coop_service.dtos;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -31,8 +33,10 @@ public class CooperativeDTO {
     private String photo;
     private Integer status = 1;
 
-    @NotNull
-    @JsonManagedReference
+
+    //@JsonManagedReference
+    //@JsonIgnore
+    @JsonBackReference
     private List<BusDTO> buses;
 
 

@@ -3,8 +3,10 @@ package com.greencode.coop_service.dtos;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -16,15 +18,16 @@ public class BusDTO {
     @EqualsAndHashCode.Include
     private UUID idBus;
 
-    private Integer type;
+    private String type;
     private Integer unitNumber;
     private Integer seatsNumber;
     private String plate;
     private Integer status = 1;
 
-    @JsonBackReference
+    @JsonManagedReference
+    //@JsonBackReference
     private CooperativeDTO cooperative;
 
-    private StaffDTO staff;
+    private List<StaffDTO> staff;
 
 }

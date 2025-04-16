@@ -26,7 +26,7 @@ public class Staff {
     private String name;
 
     @Column(name = "idRol", nullable = false)
-    private UUID idRol;
+    private String idRol;
 
     @Column(name = "phone", nullable = false)
     private String phone;
@@ -40,5 +40,9 @@ public class Staff {
     @ManyToOne
     @JoinColumn(name = "id_license", foreignKey = @ForeignKey(name = "FK_LICENSE"))
     private License license;
+
+    @ManyToOne
+    @JoinColumn(name = "id_bus", foreignKey = @ForeignKey(name = "FK_BUS"))
+    private Bus bus;
 
 }

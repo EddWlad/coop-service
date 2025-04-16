@@ -1,9 +1,11 @@
 package com.greencode.coop_service.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -24,7 +26,7 @@ public class Bus {
     private UUID idBus;
 
     @Column(name = "type", nullable = false)
-    private Integer type;
+    private String type;
 
     @Column(name = "unitNumber", nullable = false)
     private Integer unitNumber;
@@ -42,8 +44,11 @@ public class Bus {
     @JoinColumn(name = "id_coop", foreignKey = @ForeignKey(name = "FK_COOPERATIVE"))
     private Cooperative cooperative;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "bus", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Staff> staffs;
+
+    /*@ManyToOne
     @JoinColumn(name = "id_staff", foreignKey = @ForeignKey(name = "FK_STAFF"))
-    private Staff staff;
+    private Staff staff;*/
 
 }

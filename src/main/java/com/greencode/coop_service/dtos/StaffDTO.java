@@ -14,10 +14,11 @@ public class StaffDTO {
     private UUID idStaff;
 
     private String name;
-    private UUID idRol;
+    private String idRol;
     private String phone;
     private String email;
     private Integer status = 1;
     private LicenseDTO license;
+    private BusDTO bus;
 
 }
