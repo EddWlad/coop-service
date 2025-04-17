@@ -24,7 +24,7 @@ public class BusDTO {
     private String plate;
     private Integer status = 1;
 
-    @JsonManagedReference
+    //@JsonManagedReference
     //@JsonBackReference
     private CooperativeDTO cooperative;
 

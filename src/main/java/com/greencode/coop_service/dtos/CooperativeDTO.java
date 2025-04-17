@@ -35,8 +35,8 @@ public class CooperativeDTO {
 
 
     //@JsonManagedReference
-    //@JsonIgnore
-    @JsonBackReference
+    @JsonIgnore
+    //@JsonBackReference
     private List<BusDTO> buses;
 
 
